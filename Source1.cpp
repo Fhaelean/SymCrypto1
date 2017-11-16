@@ -1,41 +1,41 @@
-/*#include "Header.h"
+#include "Header.h"
 #define SIZE 5000000
 
-string RUSSIAN_ALPHABET = "абвгдежзийклмнопрстуфхцчшщъыьэюя"; // 32 символа
+string RUSSIAN_ALPHABET = "Г ГЎГўГЈГ¤ГҐГ¦Г§ГЁГ©ГЄГ«Г¬Г­Г®ГЇГ°Г±ГІГіГґГµГ¶Г·ГёГ№ГєГ»ГјГЅГѕГї"; // 32 Г±ГЁГ¬ГўГ®Г«Г 
 vector<pair<string, double>> RUSSIAN_LETTERS_FREQUENCIES = 
 {
-{"о", 0.10983},
-{"е", 0.08483},
-{"а", 0.07998},
-{"и", 0.07367},
-{"н", 0.067},
-{"т", 0.06318},
-{"с", 0.05473},
-{"р", 0.04746},
-{"в", 0.04533},
-{"л", 0.04343},
-{"к", 0.03486},
-{"м", 0.03203},
-{"д", 0.02977},
-{"п", 0.02804},
-{"у", 0.02615},
-{"я", 0.02001},
-{"ы", 0.01898},
-{"ь", 0.01735},
-{"г", 0.01687},
-{"з", 0.01641},
-{"б", 0.01592},
-{"ч", 0.0145},
-{"й", 0.01208},
-{"х", 0.00966},
-{"ж", 0.0094},
-{"ш", 0.00718},
-{"ю", 0.00639},
-{"ц", 0.00486},
-{"щ", 0.00361},
-{"э", 0.00331},
-{"ф", 0.00267},
-{"ъ", 0.00037}};
+{"Г®", 0.10983},
+{"ГҐ", 0.08483},
+{"Г ", 0.07998},
+{"ГЁ", 0.07367},
+{"Г­", 0.067},
+{"ГІ", 0.06318},
+{"Г±", 0.05473},
+{"Г°", 0.04746},
+{"Гў", 0.04533},
+{"Г«", 0.04343},
+{"ГЄ", 0.03486},
+{"Г¬", 0.03203},
+{"Г¤", 0.02977},
+{"ГЇ", 0.02804},
+{"Гі", 0.02615},
+{"Гї", 0.02001},
+{"Г»", 0.01898},
+{"Гј", 0.01735},
+{"ГЈ", 0.01687},
+{"Г§", 0.01641},
+{"ГЎ", 0.01592},
+{"Г·", 0.0145},
+{"Г©", 0.01208},
+{"Гµ", 0.00966},
+{"Г¦", 0.0094},
+{"Гё", 0.00718},
+{"Гѕ", 0.00639},
+{"Г¶", 0.00486},
+{"Г№", 0.00361},
+{"ГЅ", 0.00331},
+{"Гґ", 0.00267},
+{"Гє", 0.00037}};
 
 int matchStatistic(string text, int r) 
 {
@@ -122,7 +122,7 @@ string decrypt(string alphabet, string cipherText)
 	transform(cipherText.begin(), cipherText.end(), cipherText.begin(), ::tolower);
 	int keyLength = 1;
 
-	cout << "Статистика совпадения символов для разных периодов:" << endl;
+	cout << "Г‘ГІГ ГІГЁГ±ГІГЁГЄГ  Г±Г®ГўГЇГ Г¤ГҐГ­ГЁГї Г±ГЁГ¬ГўГ®Г«Г®Гў Г¤Г«Гї Г°Г Г§Г­Г»Гµ ГЇГҐГ°ГЁГ®Г¤Г®Гў:" << endl;
 	while (true) 
 	{
 		cout << setw(2) << keyLength << ". " << matchStatistic(cipherText, keyLength) << endl;
@@ -130,7 +130,7 @@ string decrypt(string alphabet, string cipherText)
 		break;
 		keyLength++;
 	}
-	cout << "Длина ключа = " << keyLength << endl;
+	cout << "Г„Г«ГЁГ­Г  ГЄГ«ГѕГ·Г  = " << keyLength << endl;
 
 	vector<vector<int>> potentialKeysArray;
 	vector<int> potentialKeysIndices;
@@ -155,24 +155,24 @@ string decrypt(string alphabet, string cipherText)
 	{
 		plainText = decrypt(alphabet, cipherText, key);
 		cout << endl;
-		cout << "Ключ:  " << key << endl;
-		cout << "Расшифрованный текст: " << plainText.substr(0, 50) << endl;
+		cout << "ГЉГ«ГѕГ·:  " << key << endl;
+		cout << "ГђГ Г±ГёГЁГґГ°Г®ГўГ Г­Г­Г»Г© ГІГҐГЄГ±ГІ: " << plainText.substr(0, 50) << endl;
 		int l = cipherText.length();
-		cout << "Изменить букву в ключе?" << endl;
-		cout << "Ответ: ";
+		cout << "Г€Г§Г¬ГҐГ­ГЁГІГј ГЎГіГЄГўГі Гў ГЄГ«ГѕГ·ГҐ?" << endl;
+		cout << "ГЋГІГўГҐГІ: ";
 		string answer;
 		cin >> answer;
 
 		if (answer != "yes")
 		{
 			freopen("out1.txt", "w", stdout);
-			cout << "Расшифрованный текст: " << plainText.substr(0, l) << endl;
+			cout << "ГђГ Г±ГёГЁГґГ°Г®ГўГ Г­Г­Г»Г© ГІГҐГЄГ±ГІ: " << plainText.substr(0, l) << endl;
 			fclose(stdout);
 			break;
 		}
 		
 
-		cout << "Введите индекс буквы, чтобы изменить её (индексация с нуля): ";
+		cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ­Г¤ГҐГЄГ± ГЎГіГЄГўГ», Г·ГІГ®ГЎГ» ГЁГ§Г¬ГҐГ­ГЁГІГј ГҐВё (ГЁГ­Г¤ГҐГЄГ±Г Г¶ГЁГї Г± Г­ГіГ«Гї): ";
 		int index;
 		cin >> index;
 		potentialKeysIndices[index] += 1;
@@ -188,5 +188,5 @@ int main()
 	string cipherText;
 	getline(wif, cipherText);
 	decrypt(RUSSIAN_ALPHABET, cipherText);
-	return 0;
-}*/
+	return EXIT_SUCCESS;
+}
